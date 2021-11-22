@@ -17,11 +17,13 @@ public class HumanTest {
     void testWrongName() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
                 () -> new Human("DomjánGábor", 1983));
+        assertEquals("Enter a firstname and a lastname as well.", exception.getMessage());
     }
     @Test
     void testWrongAge() {
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class,
-                () -> new Human("Domján Gábor", 1800));
+                () -> new Human("Domján Gábor", 1900));
+        assertEquals("Your age can't be higher than 120 years.", exception.getMessage());
     }
 
 
