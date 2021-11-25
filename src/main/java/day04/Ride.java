@@ -1,22 +1,22 @@
 package day04;
 
 public class Ride {
-    private int numberOfDay;
-    private int ridePerDay;
+    private int dayOfRide;
+    private int rideOfDay;
     private double km;
 
-    public Ride(int numberOfDay, int ridePerDay, double km) {
-        this.numberOfDay = numberOfDay;
-        this.ridePerDay = ridePerDay;
+    public Ride(int dayOfRide, int rideOfDay, double km) {
+        this.dayOfRide = dayOfRide;
+        this.rideOfDay = rideOfDay;
         this.km = km;
     }
 
-    public int getNumberOfDay() {
-        return numberOfDay;
+    public int getDayOfRide() {
+        return dayOfRide;
     }
 
-    public int getRidePerDay() {
-        return ridePerDay;
+    public int getRideOfDay() {
+        return rideOfDay;
     }
 
     public double getKm() {

@@ -15,4 +15,18 @@ public class Courier {
 
 
     }
+
+    private int nextDayOfRide(Ride ride) {
+        if (rides.size() == 0) {
+            return 1;
+        } else {
+            return rides.get(rides.size() - 1).getDayOfRide();
+        }
+    }
+
+    private int nextRideOfDay(Ride ride) {
+        if (ride.getRideOfDay() == rides.get(rides.size() - 1).getRideOfDay()) {
+
+        }
+    }
 }
