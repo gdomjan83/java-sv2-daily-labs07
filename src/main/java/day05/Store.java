@@ -3,6 +3,7 @@ package day05;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
@@ -23,7 +24,8 @@ public class Store {
         }
     }
 
-    public void writeProductListByMonth(Month month, Path path) {
+    public void writeProductListByMonth(Month month, Path dir) {
+        Path path = Paths.get(dir + "_" + month.name() + ".csv");
         writeFile(path, sortProductsByMonth(month));
     }
 
@@ -42,7 +44,7 @@ public class Store {
             Files.write(path, data);
         }
         catch (IOException ioe) {
-            throw new IllegalStateException("Cannot write file.", ioe);
+            throw new IllegalArgumentException("Cannot write file.", ioe);
         }
     }
 
