@@ -10,23 +10,20 @@ public class Courier {
         return rides;
     }
 
-    public void addRide(Ride ride) {
-
-
-
-    }
-
-    private int nextDayOfRide(Ride ride) {
+    public boolean addRide(Ride ride) {
         if (rides.size() == 0) {
-            return 1;
+            return rides.add(ride);
         } else {
-            return rides.get(rides.size() - 1).getDayOfRide();
-        }
-    }
-
-    private int nextRideOfDay(Ride ride) {
-        if (ride.getRideOfDay() == rides.get(rides.size() - 1).getRideOfDay()) {
-
+            int lastDay = rides.get(rides.size() - 1).getDayOfRide();
+            if (lastDay < ride.getDayOfRide()) {
+                return rides.add(ride);
+            } else {
+                int lastRide = rides.get(rides.size() - 1).getRideOfDay();
+                if (lastRide < ride.getRideOfDay()) {
+                    return rides.add(ride);
+                }
+            }
+            throw new IllegalArgumentException("New ride data is not in sync with previous data.");
         }
     }
 }
