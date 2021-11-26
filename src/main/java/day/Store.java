@@ -3,7 +3,6 @@ package day;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.time.Month;
 import java.util.ArrayList;
@@ -48,6 +47,6 @@ public class Store {
     }
 
     private String getProductData(Product product) {
-        return product.getName() + ";" + String.valueOf(product.getDateOfSell()) + ";" + product.getPrice();
+        return product.getProductName() + ";" + String.valueOf(product.getDateOfSell()) + ";" + product.getPrice();
     }
 }
