@@ -24,9 +24,10 @@ public class Store {
         }
     }
 
-    public void writeProductListByMonth(Month month, Path dir) {
-        Path path = Paths.get(dir + "_" + month.name() + ".csv");
+    public Path writeProductListByMonth(Month month, Path dir) {
+        Path path = Paths.get(dir + "\\" + month.name() + ".csv");
         writeFile(path, sortProductsByMonth(month));
+        return path;
     }
 
     private List<String> sortProductsByMonth(Month month) {
