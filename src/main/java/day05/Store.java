@@ -23,7 +23,7 @@ public class Store {
         }
     }
 
-    public void writeProductList(Month month, Path path) {
+    public void writeProductListByMonth(Month month, Path path) {
         writeFile(path, sortProductsByMonth(month));
     }
 
