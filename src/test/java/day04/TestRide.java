@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class testRide {
+public class TestRide {
     @Test
     void testCreate() {
         Ride ride = new Ride(2, 3, 15.3);

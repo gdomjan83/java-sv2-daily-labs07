@@ -13,17 +13,18 @@ public class Courier {
     public boolean addRide(Ride ride) {
         if (rides.size() == 0) {
             return rides.add(ride);
-        } else {
-            int lastDay = rides.get(rides.size() - 1).getDayOfRide();
-            if (lastDay < ride.getDayOfRide()) {
-                return rides.add(ride);
-            } else {
-                int lastRide = rides.get(rides.size() - 1).getRideOfDay();
-                if (lastRide < ride.getRideOfDay()) {
-                    return rides.add(ride);
-                }
-            }
-            throw new IllegalArgumentException("New ride data is not in sync with previous data.");
         }
+
+        int lastDay = rides.get(rides.size() - 1).getDayOfRide();
+        if (lastDay < ride.getDayOfRide()) {
+            return rides.add(ride);
+        }
+
+        int lastRide = rides.get(rides.size() - 1).getRideOfDay();
+        if (lastRide < ride.getRideOfDay()) {
+            return rides.add(ride);
+        }
+
+        throw new IllegalArgumentException("New ride data is not in sync with previous data.");
     }
 }
