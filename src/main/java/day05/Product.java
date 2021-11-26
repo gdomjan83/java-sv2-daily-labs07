@@ -1,4 +1,4 @@
-package day;
+package day05;
 
 import java.time.LocalDate;
 
